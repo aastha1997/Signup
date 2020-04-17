@@ -1,0 +1,107 @@
+  <!--nav bar-->
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Comunev</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+        <a class="nav-link " href="#">Login</a>
+        </li>   
+    </ul>
+</nav>
+
+<!--animation-->
+<div class="area" >
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+<!--sign up-->
+
+<div class="container-fluid" style="width: 750px; height: 550px; margin-top: 20px;">
+        <div class="row container-fluid" style="opacity: 0.9;">
+            <div class="col-md-6 card card-body">
+                <h1>Sign up</h1>
+                <div>
+                    <form [formGroup]="regForm" (ngSubmit)="submit()">
+                        <div class="form-group">
+                            <label for="firstName">First Name:</label>
+                            <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+                            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                                <div *ngIf="f.firstName.errors.minlength">First Name is minimum 2 characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name:</label>
+                            <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" formControlName="lastName"  [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+
+                            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Username" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                                <div *ngIf="f.username.errors.minlength">Username is minimum 5 characters</div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="Password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password is minimum 8 characters</div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="dob">Date of Birth:</label>
+                            <input class="form-control" type="date" name="dob" id="dob" placeholder="" formControlName="dob" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }">
+
+                            <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                                <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <input class="form-control" type="text" name="country" id="country" placeholder="Country" formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+
+                            <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                <div *ngIf="f.country.errors.required">Country is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-success btn-lg" value="signup">Sign Up</button>
+                                <a href="#" class="btn btn-link">Have an account?</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-md-6 card card-body text-white right">
+                <span class="loginwith">Sign in with<br />social account.</span>
+            <br>
+            <button class="social-signin facebook"><a href="https://www.facebook.com/">Log in with Facebook</a></button>
+            <button class="social-signin twitter"><a href="https://twitter.com/login">Log in with Twitter</a></button>
+            <button class="social-signin google"><a href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Log in with Google+</a></button>
+        
+            </div>
+            <div class="or">OR</div>
+        </div>
+</div>
